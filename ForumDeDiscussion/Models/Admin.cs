@@ -2,8 +2,8 @@
 {
     public class Admin
     {
-        int id { set; get; }
-        string userName { set; get; }
-        string password { set; get; }
+        public int id { set; get; }
+        public string userName { set; get; }
+        public string password { set; get; }
     }
 }

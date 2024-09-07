@@ -1,13 +1,15 @@
-﻿namespace ForumDeDiscussion.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ForumDeDiscussion.Models
 {
     public class Message
     {
-        Guid Id { get; set; }
-        string Titre { get; set; } = "";
-        string Contenu { get; set; } = "";
-        Guid MembreId { get; set; }
-        Membre Membre { get; set; }
-        int SujetId { get; set; }
-        Sujet Sujet { get; set; }
+        public int Id { get; set; }
+        public string Titre { get; set; }
+        public string Contenu { get; set; }
+        public int MembreId { get; set; }
+        public Membre Membre { get; set; }
+        public int SujetId { get; set; }
+        public Sujet Sujet { get; set; }
     }
 }

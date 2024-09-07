@@ -2,10 +2,10 @@
 {
     public class Sujet
     {
-        int Id { get; set; }
-        string Titre { get; set; }
-        int SectionId { get; set; }
-        Section Section { get; set; }
-        List<Message> Messages { get; set; }
+        public int Id { get; set; }
+        public string Titre { get; set; }
+        public int SectionId { get; set; }
+        public Section Section { get; set; }
+        public List<Message> Messages { get; set; }
     }
 }

@@ -2,12 +2,12 @@
 {
     public class Membre
     {
-        Guid Id { get; set; }
-        string Name { get; set; } = "";
-        string Firstname { get; set; } = "";
-        string Mail { get; set; } = "";
-        string Password { get; set; } = "";
-        string UserName { get; set; } = ""; 
-        List<Message> Messages { get; set; } = new List<Message>();
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Firstname { get; set; }
+        public string Mail { get; set; }
+        public string Password { get; set; }
+        public string UserName { get; set; }
+        public List<Message> Messages { get; set; }
     }
 }

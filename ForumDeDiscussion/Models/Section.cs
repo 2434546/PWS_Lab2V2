@@ -2,9 +2,9 @@
 {
     public class Section
     {
-        int Id { get; set; }
-        string Titre { get; set; }
-        List<Sujet> Sujets { get; set; }
+        public int Id { get; set; }
+        public string Titre { get; set; }
+        public List<Sujet> Sujets { get; set; }
 
     }
 }

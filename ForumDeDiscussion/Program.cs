@@ -1,3 +1,6 @@
+using ForumDeDiscussion.Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace ForumDeDiscussion
 {
     public class Program
@@ -8,6 +11,11 @@ namespace ForumDeDiscussion
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<ForumDeDiscussionDbContext>(options =>
+            {
+                options.UseMySql(builder.Configuration.GetConnectionString("ForumDeDiscussionDbContext"), new MySqlServerVersion(new Version(6, 0, 3)));
+            });
 
             var app = builder.Build();
 

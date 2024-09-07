@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ForumDeDiscussion.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace ForumDeDiscussion.Models
+namespace ForumDeDiscussion.Data.Context
 {
     public class ForumDeDiscussionDbContext : DbContext
     {
@@ -14,9 +15,10 @@ namespace ForumDeDiscussion.Models
 
         public DbSet<Message> messages { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+        }
     }
 }
