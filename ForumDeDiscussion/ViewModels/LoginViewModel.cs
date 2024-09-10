@@ -5,9 +5,9 @@ namespace ForumDeDiscussion.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
-        [DisplayName("Nom d'utilisateur")]
-        public string UserName { get; set; }
+        //[Required]
+        //[DisplayName("Nom d'utilisateur")]
+        //public string UserName { get; set; }
 
         [Required]
         [EmailAddress]

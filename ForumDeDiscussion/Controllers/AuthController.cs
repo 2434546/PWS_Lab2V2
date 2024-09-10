@@ -70,7 +70,7 @@ namespace ForumDeDiscussion.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel viewModel, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel viewModel, string? returnurl)
         {
             if (ModelState.IsValid)
             {
@@ -91,19 +91,19 @@ namespace ForumDeDiscussion.Controllers
                         CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(identity));
 
-                        if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
+                        if (!string.IsNullOrWhiteSpace(returnurl) && Url.IsLocalUrl(returnurl))
                         {
-                            return LocalRedirect(returnUrl);
+                            return LocalRedirect(returnurl);
                         }
 
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                //else
+                //{
+                    ModelState.AddModelError("Password", "Invalid login attempt.");
                     _logger.LogWarning("User not found.");
-                }
+                //}
             }
 
             return View(viewModel);
