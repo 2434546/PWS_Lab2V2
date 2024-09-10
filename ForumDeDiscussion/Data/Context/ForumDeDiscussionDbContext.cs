@@ -15,6 +15,8 @@ namespace ForumDeDiscussion.Data.Context
 
         public DbSet<Message> messages { get; set; }
 
+        public DbSet<Membre> membre { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

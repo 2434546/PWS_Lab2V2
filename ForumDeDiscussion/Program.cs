@@ -1,4 +1,5 @@
 using ForumDeDiscussion.Data.Context;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForumDeDiscussion
@@ -9,13 +10,21 @@ namespace ForumDeDiscussion
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
-
             builder.Services.AddDbContext<ForumDeDiscussionDbContext>(options =>
             {
                 options.UseMySql(builder.Configuration.GetConnectionString("ForumDeDiscussionDbContext"), new MySqlServerVersion(new Version(6, 0, 3)));
             });
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Auth/Login");
+                options.LoginPath = new PathString("/Auth/Login");
+                options.LogoutPath = new PathString("/Auth/Logout");
+                options.ReturnUrlParameter = "returnurl";
+            });
+
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
 
@@ -32,6 +41,7 @@ namespace ForumDeDiscussion
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

@@ -2,6 +2,7 @@
 using ForumDeDiscussion.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ForumDeDiscussion.Migrations
 {
     [DbContext(typeof(ForumDeDiscussionDbContext))]
-    partial class ForumDeDiscussionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240910135627_login")]
+    partial class login
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

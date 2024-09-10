@@ -1,0 +1,51 @@
+# Ignore les fichiers de configuration de l'IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Ignore les fichiers générés par le système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Ignore les fichiers de log
+*.log
+
+# Ignore les fichiers temporaires
+*.tmp
+*.temp
+
+# Ignore les fichiers de build
+/dist/
+/build/
+
+# Ignore les fichiers de dépendances
+/node_modules/
+/vendor/
+
+# Ignore les fichiers de compilateur
+*.pyc
+*.class
+*.o
+*.a
+*.out
+
+# Ignore les fichiers de secrets ou clés
+.env
+*.pem
+*.key
+
+# Ignore les fichiers spécifiques aux langages
+# Python
+*.pyc
+__pycache__/
+# Java
+*.class
+*.jar
+*.war
+# Node.js
+npm-debug.log
+yarn-error.log
