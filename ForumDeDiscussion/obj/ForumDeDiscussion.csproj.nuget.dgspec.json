@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asiau\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj": {}
+    "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asiau\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj": {
+    "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asiau\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
+        "projectUniqueName": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
         "projectName": "ForumDeDiscussion",
-        "projectPath": "C:\\Users\\asiau\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
-        "packagesPath": "C:\\Users\\asiau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asiau\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\obj\\",
+        "projectPath": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
+        "packagesPath": "C:\\Users\\2434546\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\asiau\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\2434546\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +55,10 @@
               "target": "Package",
               "version": "[6.0.33, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.17, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.3, )"
@@ -72,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.420\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
