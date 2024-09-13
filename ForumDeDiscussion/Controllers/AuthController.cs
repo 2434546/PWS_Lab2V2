@@ -85,6 +85,7 @@ namespace ForumDeDiscussion.Controllers
                         var identity = new ClaimsIdentity(new[]
                         {
                             new Claim(ClaimTypes.Email, viewModel.Email),
+                            new Claim(ClaimTypes.Role, user.Role),
                         }, CookieAuthenticationDefaults.AuthenticationScheme);
 
                         await HttpContext.SignInAsync(

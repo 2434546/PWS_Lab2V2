@@ -1,10 +1,12 @@
 ﻿using ForumDeDiscussion.Data.Context;
 using ForumDeDiscussion.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForumDeDiscussion.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = Membre.ROLE_ADMIN)]
     public class SectionsManagementController : Controller
     {
         private readonly ForumDeDiscussionDbContext _context;
@@ -15,11 +17,18 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public IActionResult SectionsManagement()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult SectionManagement()
         {
             var sections = _context.sections.OrderBy(s => s.Id).ToList();
             return View(sections);
         }
+
         [HttpGet]
         public IActionResult Create()
         {

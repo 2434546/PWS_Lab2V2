@@ -4,26 +4,33 @@
 
 <div>
     <h1>Gestion des sections</h1>
-    <table class="table">
+    <a class="btn btn-primary" asp-action="Create">Ajouter une nouvelle section</a>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nom</th>
-                <th scope="col"></th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Section1</td>
-                <td>
-                    <ul>
-                        <li>Ajouter</li
-                        <li>Modifier</li>
-                        <li>Supprimer</li>
-                    </ul>
-                </td>
-            </tr>
+                @foreach (var section in Model)
+                {
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td>
+                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="">Modifier</a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="">Supprimer</a>
+                        </td>
+                    </tr>
+                }
+            
+            <!--
+                <tr>
+                    <td colspan="3">Aucune section trouvé</td>
+                </tr>
+            -->
         </tbody>
     </table>
 </div>
