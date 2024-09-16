@@ -5,11 +5,15 @@ namespace ForumDeDiscussion.Models
     public class Message
     {
         public int Id { get; set; }
-        public string Titre { get; set; }
-        public string Contenu { get; set; }
-        public int MembreId { get; set; }
-        public Membre Membre { get; set; }
-        public int SujetId { get; set; }
-        public Sujet Sujet { get; set; }
+        public string Content { get; set; } = string.Empty;
+        public int MemberId { get; set; }
+        public Member Member { get; set; }
+        public int SubjectId { get; set; }
+        public Subject Subject { get; set; }
+        public DateTime Date { get; set; }
+
+        public Message()
+        {
+        }
     }
 }

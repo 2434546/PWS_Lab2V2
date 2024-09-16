@@ -4,7 +4,7 @@
 
 <div>
     <h1>Gestion des sections</h1>
-    <a class="btn btn-primary" asp-action="Create">Ajouter une nouvelle section</a>
+    <a class="btn btn-primary" asp-controller="SectionsManagement" asp-action="Create">Ajouter une nouvelle section</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -20,8 +20,8 @@
                         <th scope="row"></th>
                         <td></td>
                         <td>
-                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="">Modifier</a>
-                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="">Supprimer</a>
+                            <a class="btn btn-warning" asp-controller="SectionsManagement" asp-action="Edit" asp-route-id="">Modifier</a>
+                            <a class="btn btn-danger" asp-controller="SectionsManagement" asp-action="Delete" asp-route-id="">Supprimer</a>
                         </td>
                     </tr>
                 }

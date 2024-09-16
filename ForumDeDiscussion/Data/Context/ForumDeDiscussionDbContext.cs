@@ -9,18 +9,22 @@ namespace ForumDeDiscussion.Data.Context
         {
         }
 
-        public DbSet<Section> sections { get; set; }
+        public DbSet<Section> Sections { get; set; }
 
-        public DbSet<Sujet> sujets { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
 
-        public DbSet<Message> messages { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
-        public DbSet<Membre> membre { get; set; }
+        public DbSet<Member> Members { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Message>()
+                .HasOne(m => m.Subject)
+                .WithMany(s => s.Messages)
+                .HasForeignKey(m => m.SubjectId);
         }
     }
 }

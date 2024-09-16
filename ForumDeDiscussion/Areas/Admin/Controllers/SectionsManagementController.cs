@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ForumDeDiscussion.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = Membre.ROLE_ADMIN)]
+    [Authorize(Roles = Member.ROLE_ADMIN)]
     public class SectionsManagementController : Controller
     {
         private readonly ForumDeDiscussionDbContext _context;
@@ -15,9 +15,8 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             _context = context;
         }
-
-        [HttpGet]
-        public IActionResult SectionsManagement()
+        
+        public IActionResult Index()
         {
             return View();
         }
@@ -25,7 +24,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult SectionManagement()
         {
-            var sections = _context.sections.OrderBy(s => s.Id).ToList();
+            var sections = _context.Sections.OrderBy(s => s.Id).ToList();
             return View(sections);
         }
 
@@ -40,7 +39,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.sections.Add(section);
+                _context.Sections.Add(section);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SectionManagement));
             }
@@ -50,7 +49,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var section = _context.sections.Find(id);
+            var section = _context.Sections.Find(id);
             if (section == null)
             {
                 return NotFound();
@@ -63,7 +62,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.sections.Update(section);
+                _context.Sections.Update(section);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SectionManagement));
             }
@@ -73,7 +72,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var section = _context.sections.Find(id);
+            var section = _context.Sections.Find(id);
             if (section == null)
             {
                 return NotFound();
@@ -84,10 +83,10 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var section = _context.sections.Find(id);
+            var section = _context.Sections.Find(id);
             if (section != null)
             {
-                _context.sections.Remove(section);
+                _context.Sections.Remove(section);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(SectionManagement));

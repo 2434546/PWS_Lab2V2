@@ -34,7 +34,7 @@ namespace ForumDeDiscussion.Controllers
         {
             if (ModelState.IsValid)
             {
-                var existingUser = await _context.membre.AnyAsync(m => m.UserName == viewModel.UserName || m.Email == viewModel.Email);
+                var existingUser = await _context.Members.AnyAsync(m => m.UserName == viewModel.UserName || m.Email == viewModel.Email);
                 if (existingUser)
                 {
                     ModelState.AddModelError("", "Un utilisateur avec ce nom ou cet email existe déjà.");
@@ -43,7 +43,7 @@ namespace ForumDeDiscussion.Controllers
 
                 string hashedPassword = CryptographyHelper.HashPassword(viewModel.Password);
 
-                var newMember = new Membre
+                var newMember = new Member
                 {
                     Name = viewModel.Name,
                     Firstname = viewModel.Firstname,
@@ -52,7 +52,7 @@ namespace ForumDeDiscussion.Controllers
                     Password = hashedPassword,
                 };
 
-                _context.membre.Add(newMember);
+                _context.Members.Add(newMember);
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction("Index", "Home");
@@ -74,7 +74,7 @@ namespace ForumDeDiscussion.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _context.membre.FirstOrDefaultAsync(m => m.Email == viewModel.Email);
+                var user = await _context.Members.FirstOrDefaultAsync(m => m.Email == viewModel.Email);
 
                 if (user != null)
                 {
@@ -84,6 +84,8 @@ namespace ForumDeDiscussion.Controllers
                     {
                         var identity = new ClaimsIdentity(new[]
                         {
+                            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                            new Claim(ClaimTypes.Name, user.UserName),
                             new Claim(ClaimTypes.Email, viewModel.Email),
                             new Claim(ClaimTypes.Role, user.Role),
                         }, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -100,11 +102,8 @@ namespace ForumDeDiscussion.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
-                //else
-                //{
-                    ModelState.AddModelError("Password", "Invalid login attempt.");
-                    _logger.LogWarning("User not found.");
-                //}
+                ModelState.AddModelError("Password", "Invalid login attempt.");
+                _logger.LogWarning("User not found.");
             }
 
             return View(viewModel);

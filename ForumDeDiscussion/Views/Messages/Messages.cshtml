@@ -1,0 +1,45 @@
+﻿@model List<ForumDeDiscussion.ViewModels.MessageViewModel>
+
+@{
+    ViewData["Title"] = "Conversation";
+}
+
+<div class="container conversation-container mt-5">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    
+    <div class="messages-area mb-4" style="max-height: 500px; overflow-y: auto;">
+        @if (Model != null && Model.Any())
+        {
+            <div class="d-flex flex-column">
+                @foreach (var message in Model)
+                {
+                    <div class="@(message.Auteur == User.Identity.Name ? "d-flex justify-content-end" : "d-flex justify-content-start")">
+                        <div class="message-bubble p-2 rounded mb-2" style="max-width: 70%; background-color: @(message.Auteur == User.Identity.Name ? "#007BFF" : "#e9ecef"); color: @(message.Auteur == User.Identity.Name ? "white" : "black");">
+                            <div class="message-content">
+                                <p>@message.Contenu</p>
+                                <small class="message-info">@message.Auteur - @message.Date.ToString("dd/MM/yyyy HH:mm")</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="text-center">Aucun message trouvé pour ce sujet.</p>
+        }
+    </div>
+    
+    @if (User.IsInRole("Admin") || User.IsInRole("Membre"))
+    {
+        <div class="message-form mt-4">
+            <form asp-action="SendMessage" method="post">
+                <input type="hidden" name="sujetId" value="@ViewBag.SujetId" />
+                <div class="input-group">
+                    <input type="text" class="form-control" id="contenu" name="contenu" placeholder="Écrivez un message..." required />
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </div>   
+    }
+</div>

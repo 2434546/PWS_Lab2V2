@@ -7,7 +7,7 @@ using System.Data;
 namespace ForumDeDiscussion.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = Membre.ROLE_ADMIN)]
+    [Authorize(Roles = Member.ROLE_ADMIN)]
     public class MembersManagementController : Controller
     {
         private readonly ForumDeDiscussionDbContext _context;
@@ -16,9 +16,8 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             _context = context;
         }
-
-        [HttpGet]
-        public IActionResult MembersManagement()
+        
+        public IActionResult Index()
         {
             return View();
         }
