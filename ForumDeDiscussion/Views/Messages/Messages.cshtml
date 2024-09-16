@@ -34,9 +34,9 @@
     {
         <div class="message-form mt-4">
             <form asp-action="SendMessage" method="post">
-                <input type="hidden" name="sujetId" value="@ViewBag.SujetId" />
+                <input type="hidden" name="subjectId" value="@ViewBag.SujetId" />
                 <div class="input-group">
-                    <input type="text" class="form-control" id="contenu" name="contenu" placeholder="Écrivez un message..." required />
+                    <input type="text" class="form-control" id="content" name="content" placeholder="Écrivez un message..." required />
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </div>
             </form>

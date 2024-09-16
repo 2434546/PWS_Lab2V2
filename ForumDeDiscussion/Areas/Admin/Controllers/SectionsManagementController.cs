@@ -15,14 +15,9 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             _context = context;
         }
-        
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
-        public IActionResult SectionManagement()
+        public IActionResult SectionsManagement()
         {
             var sections = _context.Sections.OrderBy(s => s.Id).ToList();
             return View(sections);
@@ -41,7 +36,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
             {
                 _context.Sections.Add(section);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(SectionManagement));
+                return RedirectToAction(nameof(SectionsManagement));
             }
             return View(section);
         }
@@ -64,7 +59,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
             {
                 _context.Sections.Update(section);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(SectionManagement));
+                return RedirectToAction(nameof(SectionsManagement));
             }
             return View(section);
         }
@@ -89,7 +84,7 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
                 _context.Sections.Remove(section);
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction(nameof(SectionManagement));
+            return RedirectToAction(nameof(SectionsManagement));
         }
     }
 }

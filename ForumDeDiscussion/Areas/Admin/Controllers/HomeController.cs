@@ -21,15 +21,5 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             return View();
         }
-
-        public IActionResult MembersManagement()
-        {
-            return View();
-        }
-
-        public IActionResult SectionsManagement()
-        {
-            return View();
-        }
     }
 }

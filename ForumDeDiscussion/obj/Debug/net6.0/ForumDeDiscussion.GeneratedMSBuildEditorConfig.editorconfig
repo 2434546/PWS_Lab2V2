@@ -19,12 +19,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/WEB/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Members/MembersManagement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc1xNZW1iZXJzTWFuYWdlbWVudC5jc2h0bWw=
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/WEB/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/MembersManagement/MembersManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc01hbmFnZW1lbnRcTWVtYmVyc01hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/WEB/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Sections/SectionsManagement.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VjdGlvbnNcU2VjdGlvbnNNYW5hZ2VtZW50LmNzaHRtbA==
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/WEB/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/SectionsManagement/SectionsManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VjdGlvbnNNYW5hZ2VtZW50XFNlY3Rpb25zTWFuYWdlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/WEB/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Shared/_Layout.cshtml]

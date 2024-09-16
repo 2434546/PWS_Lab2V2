@@ -3,6 +3,7 @@ using ForumDeDiscussion.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ForumDeDiscussion.Areas.Admin.Controllers
 {
@@ -17,9 +18,10 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
             _context = context;
         }
         
-        public IActionResult Index()
+        public async Task<IActionResult> MembersManagement()
         {
-            return View();
+            var members = await _context.Members.ToListAsync();
+            return View(members);
         }
     }
 }
