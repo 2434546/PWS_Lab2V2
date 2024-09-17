@@ -54,35 +54,24 @@ public class SubjectsController : Controller
         return RedirectToAction(nameof(Subjects), new { sectionId = viewModel.SectionId });
     }
 
-
-    public async Task<IActionResult> Edit(int id)
-    {
-        var subject = await _context.Subjects.FindAsync(id);
-        if (subject == null)
-        {
-            return NotFound();
-        }
-
-        return View(subject);
-    }
-
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, Subject subject)
+    public async Task<IActionResult> Edit(int id, AddSubjectViewModel viewModel)
     {
-        if (id != subject.Id)
-        {
-            return NotFound();
-        }
-
         if (ModelState.IsValid)
         {
+            var subject = new Subject
+            {
+                SectionId = viewModel.SectionId,
+                Title = viewModel.Name
+            };
+
             _context.Update(subject);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Subjects), new { sectionId = subject.SectionId });
         }
 
-        return View(subject);
+        return RedirectToAction(nameof(Subject), new { sectionId = viewModel.SectionId });
     }
 
     public async Task<IActionResult> Delete(int id)

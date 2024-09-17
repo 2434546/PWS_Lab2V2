@@ -29,7 +29,10 @@
                     <td>
                         @if (User.IsInRole("Admin") || User.IsInRole("Membre"))
                         {
-                            <a asp-controller="Subjects" asp-action="Edit" asp-route-id="@subject.SubjectId" class="btn btn-secondary">Modifier</a>
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#editSubjectModal">
+                                Modifier
+                            </button>
+                                <!--<a asp-controller="Subjects" asp-action="Edit" asp-route-id="@subject.SubjectId" class="btn btn-secondary">Modifier</a>-->
                             <a asp-controller="Subjects" asp-action="Delete" asp-route-id="@subject.SubjectId" class="btn btn-danger">Supprimer</a>
                         }
                     </td>
@@ -46,6 +49,8 @@
     </table>
 </div>
 
+<!-- Modal pour ajouter un sujet -->
+
 @if (User.IsInRole("Admin") || User.IsInRole("Membre"))
 {
     <div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
@@ -58,8 +63,8 @@
                 <div class="modal-body">
                     <form asp-controller="Subjects" asp-action="Create" method="post">
                         <div class="mb-3">
-                            <label for="Titre" class="form-label">Titre du Sujet</label>
-                            <input type="text" class="form-control" id="Titre" name="Titre" required>
+                            <label for="Name" class="form-label">Titre du Sujet</label>
+                            <input type="text" class="form-control" id="Name" name="Name" required>
                         </div>
                         <input type="hidden" name="SectionId" value="@ViewBag.SectionId" />
                         <div class="modal-footer">
@@ -74,3 +79,31 @@
     </div>   
 }
 
+<!-- Modal pour modifier un sujet -->
+@if (User.IsInRole("Admin") || User.IsInRole("Membre"))
+{
+    <div class="modal fade" id="editSubjectModal" tabindex="-1" aria-labelledby="editSubjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editSubjectModalLabel">Modifier le sujet</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form asp-controller="Subjects" asp-action="Edit" method="post">
+                        <div class="mb-3">
+                            <label for="Name" class="form-label">Titre du Sujet</label>
+                            <input type="text" class="form-control" id="Name" name="Name" required>
+                        </div>
+                        <input type="hidden" name="SectionId" value="@ViewBag.SectionId" />
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

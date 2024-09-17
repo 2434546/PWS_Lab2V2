@@ -17,11 +17,29 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         {
             _context = context;
         }
-        
+
         public async Task<IActionResult> MembersManagement()
         {
             var members = await _context.Members.ToListAsync();
             return View(members);
+        }
+
+        /**
+        public async Task<IActionResult> Create()
+        {
+
+        }**/
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var member = await _context.Members.FindAsync(id);
+            if (member != null)
+            {
+                _context.Members.Remove(member);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("MembersManagement");
         }
     }
 }
