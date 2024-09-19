@@ -1,7 +1,9 @@
-﻿namespace ForumDeDiscussion.ViewModels;
-
-public class SubjectViewModel
+﻿namespace ForumDeDiscussion.ViewModels
 {
-    public int SubjectId { get; set; }
-    public string Name { get; set; }
+    public class SubjectViewModel
+    {
+        public int SubjectId { get; set; }
+        public string Name { get; set; }
+        public string UserId { get; set; }
+    }   
 }

@@ -21,6 +21,12 @@ namespace ForumDeDiscussion.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Subject>()
+                .HasMany(s => s.Messages)
+                .WithOne(m => m.Subject)
+                .HasForeignKey(m => m.SubjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+            
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Subject)
                 .WithMany(s => s.Messages)

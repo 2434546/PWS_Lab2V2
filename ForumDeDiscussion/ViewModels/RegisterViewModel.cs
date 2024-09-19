@@ -7,24 +7,22 @@ namespace ForumDeDiscussion.ViewModels
     {
         [Required]
         [DisplayName("Name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
-        [Required]
-        [DisplayName("Firstname")]
-        public string Firstname { get; set; }
+        [Required] [DisplayName("Firstname")] public string Firstname { get; set; } = string.Empty;
 
         [Required]
         [DisplayName("Nom d'utilisateur")]
-        public string UserName { get; set; }
+        public string UserName { get; set; } = string.Empty;
 
         [Required]
         [EmailAddress]
         [DisplayName("Email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.Password)]
         [DisplayName("Mot de passe")]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
     }
 }

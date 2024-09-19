@@ -29,8 +29,8 @@ public class MessagesController : Controller
             .Select(message => new MessageViewModel
             {
                 MessageId = message.Id,
-                Contenu = message.Content,
-                Auteur = message.Member.UserName,
+                Content = message.Content,
+                Author = message.Member.UserName,
                 Date = message.Date
             }).ToListAsync();
 
@@ -73,5 +73,54 @@ public class MessagesController : Controller
         }
 
         return RedirectToAction(nameof(Messages), new { id = subjectId });
+    }
+    
+    [HttpGet]
+    public async Task<IActionResult> GetMessageDetails(int id)
+    {
+        var message = await _context.Messages
+            .Where(m => m.Id == id)
+            .Select(m => new { MessageId = m.Id, Content = m.Content })
+            .FirstOrDefaultAsync();
+
+        if (message == null)
+        {
+            return NotFound();
+        }
+
+        return Json(message);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> EditMessage(int messageId, string content)
+    {
+        var message = await _context.Messages.FindAsync(messageId);
+        if (message == null || message.MemberId != int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)))
+        {
+            TempData["Error"] = "Vous n'avez pas l'autorisation de modifier ce message.";
+            return RedirectToAction(nameof(Messages), new { id = message.SubjectId });
+        }
+
+        message.Content = content;
+        _context.Update(message);
+        await _context.SaveChangesAsync();
+        TempData["Success"] = "Message modifié avec succès.";
+        return RedirectToAction(nameof(Messages), new { id = message.SubjectId });
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> DeleteMessage(int id)
+    {
+        var message = await _context.Messages.FindAsync(id);
+        if (message == null || message.MemberId != int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)))
+        {
+            TempData["Error"] = "Vous n'avez pas l'autorisation de supprimer ce message.";
+            return RedirectToAction(nameof(Messages), new { id = message.SubjectId });
+        }
+
+        _context.Messages.Remove(message);
+        await _context.SaveChangesAsync();
+        TempData["Success"] = "Message supprimé avec succès.";
+        return RedirectToAction(nameof(Messages), new { id = message.SubjectId });
     }
 }

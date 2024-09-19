@@ -1,5 +1,7 @@
-﻿using ForumDeDiscussion.Data.Context;
+﻿using ForumDeDiscussion.Areas.Admin.ViewModels;
+using ForumDeDiscussion.Data.Context;
 using ForumDeDiscussion.Models;
+using ForumDeDiscussion.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,72 +21,64 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult SectionsManagement()
         {
-            var sections = _context.Sections.OrderBy(s => s.Id).ToList();
+            var sections = _context.Sections
+                .Select(s => new SectionListViewModel { SectionId = s.Id, Name = s.Title })
+                .ToList();
+
             return View(sections);
         }
 
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Create(Section section)
+        public async Task<IActionResult> Create(SectionListViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                var section = new Section { Title = viewModel.Name };
                 _context.Sections.Add(section);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(SectionsManagement));
             }
-            return View(section);
-        }
-
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            var section = _context.Sections.Find(id);
-            if (section == null)
-            {
-                return NotFound();
-            }
-            return View(section);
+            return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Section section)
+        public async Task<IActionResult> Edit(SectionListViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Sections.Update(section);
-                await _context.SaveChangesAsync();
+                var section = await _context.Sections.FindAsync(viewModel.SectionId);
+                if (section != null)
+                {
+                    section.Title = viewModel.Name;
+                    _context.Sections.Update(section);
+                    await _context.SaveChangesAsync();
+                }
                 return RedirectToAction(nameof(SectionsManagement));
             }
-            return View(section);
+            return View(viewModel);
         }
 
-        [HttpGet]
-        public IActionResult Delete(int id)
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
         {
-            var section = _context.Sections.Find(id);
-            if (section == null)
-            {
-                return NotFound();
-            }
-            return View(section);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var section = _context.Sections.Find(id);
+            var section = await _context.Sections.FindAsync(id);
             if (section != null)
             {
                 _context.Sections.Remove(section);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(SectionsManagement));
+        }
+
+        [HttpGet]
+        public IActionResult GetSectionDetails(int id)
+        {
+            var section = _context.Sections
+                .Where(s => s.Id == id)
+                .Select(s => new SectionListViewModel { SectionId = s.Id, Name = s.Title })
+                .FirstOrDefault();
+
+            return Json(section);
         }
     }
 }

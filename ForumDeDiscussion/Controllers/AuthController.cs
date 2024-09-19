@@ -115,6 +115,62 @@ namespace ForumDeDiscussion.Controllers
 
             return RedirectToAction("Login");
         }
+        
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _context.Members.FirstOrDefaultAsync(m => m.Id == int.Parse(userId));
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new EditProfileViewModel
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                Name = user.Name,
+                FirstName = user.Firstname
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile(EditProfileViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var user = await _context.Members.FirstOrDefaultAsync(m => m.Id == int.Parse(userId));
+
+                if (user != null)
+                {
+                    user.UserName = viewModel.UserName;
+                    user.Email = viewModel.Email;
+                    user.Name = viewModel.Name;
+                    user.Firstname = viewModel.FirstName;
+                    
+                    if (!string.IsNullOrWhiteSpace(viewModel.NewPassword))
+                    {
+                        user.Password = CryptographyHelper.HashPassword(viewModel.NewPassword);
+                    }
+
+                    _context.Update(user);
+                    await _context.SaveChangesAsync();
+
+                    TempData["Success"] = "Profil mis à jour avec succès.";
+                    return RedirectToAction(nameof(EditProfile));
+                }
+
+                ModelState.AddModelError("", "Une erreur est survenue lors de la mise à jour du profil.");
+            }
+
+            return View(viewModel);
+        }
 
     }
 }

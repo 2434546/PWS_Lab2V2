@@ -29,7 +29,7 @@
                 <td>@member.UserName</td>
                 <td>@member.Role</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@member.Id" class="btn btn-warning">Modifier</a>
+                    <a asp-controller="MembersManagement" asp-action="Edit" asp-route-id="@member.Id" class="btn btn-warning">Modifier</a>
                     <a asp-controller="MembersManagement" asp-action="Delete" asp-route-id="@member.Id" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>

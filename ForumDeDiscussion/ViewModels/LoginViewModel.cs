@@ -5,18 +5,14 @@ namespace ForumDeDiscussion.ViewModels
 {
     public class LoginViewModel
     {
-        //[Required]
-        //[DisplayName("Nom d'utilisateur")]
-        //public string UserName { get; set; }
-
         [Required]
         [EmailAddress]
         [DisplayName("Email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.Password)]
         [DisplayName("Mot de passe")]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
     }
 }
