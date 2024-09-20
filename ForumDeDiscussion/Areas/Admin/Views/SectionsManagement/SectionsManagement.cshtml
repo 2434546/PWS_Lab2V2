@@ -99,7 +99,7 @@
     <script>
     function loadSectionDetails(sectionId) {
         $.ajax({
-            url: '/SectionsManagement/GetSectionDetails/' + sectionId,
+            url: 'https://localhost:7299/Admin/SectionsManagement/GetSectionDetails/' + sectionId,
             type: 'GET',
             success: function (data) {
                 $('#SectionId').val(data.sectionId);
