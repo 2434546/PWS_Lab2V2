@@ -9331,11 +9331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
+      "projectUniqueName": "C:\\Users\\2434546\\RiderProjects\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
       "projectName": "ForumDeDiscussion",
-      "projectPath": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
+      "projectPath": "C:\\Users\\2434546\\RiderProjects\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
       "packagesPath": "C:\\Users\\2434546\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\obj\\",
+      "outputPath": "C:\\Users\\2434546\\RiderProjects\\PWS_Lab2V2\\ForumDeDiscussion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -9363,6 +9363,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -9399,6 +9404,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.33, 6.0.33]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9407,7 +9430,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

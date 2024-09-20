@@ -7,7 +7,7 @@ namespace ForumDeDiscussion.Models
         public int Id { get; set; }
 
         [Display(Name = "Nom de la section")]
-        public string Title { get; set; } = String.Empty;
+        public string Title { get; set; } = string.Empty;
 
         public List<Subject> Subjects { get; set; } = new List<Subject>();
 

@@ -22,9 +22,9 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         public IActionResult SectionsManagement()
         {
             var sections = _context.Sections
-                .Select(s => new SectionListViewModel { SectionId = s.Id, Name = s.Title })
+                .Select(s => new Section { Id = s.Id, Title = s.Title })
                 .ToList();
-
+            
             return View(sections);
         }
 
@@ -42,23 +42,23 @@ namespace ForumDeDiscussion.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(SectionListViewModel viewModel)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int sectionId, string title) //SectionListViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                var section = await _context.Sections.FindAsync(viewModel.SectionId);
+                var section = await _context.Sections.FindAsync(sectionId);
                 if (section != null)
                 {
-                    section.Title = viewModel.Name;
+                    section.Title = title;
                     _context.Sections.Update(section);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(SectionsManagement));
                 }
-                return RedirectToAction(nameof(SectionsManagement));
             }
-            return View(viewModel);
+            return RedirectToAction(nameof(SectionsManagement));
         }
-
-        [HttpPost]
+        
         public async Task<IActionResult> Delete(int id)
         {
             var section = await _context.Sections.FindAsync(id);

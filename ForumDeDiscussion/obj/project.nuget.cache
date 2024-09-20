@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bdqCtAsgJfH+w6RNdRgz1rMQy8bnRn9yLGYNNWujPCUJK/5Z8j8S4PJo13U88Hm/WYQVznbZe/vuU+WOV43zDg==",
+  "dgSpecHash": "MZWj11L3yoc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\2434546\\OneDrive - Cégep de Chicoutimi\\Bureau\\WEB\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
+  "projectFilePath": "C:\\Users\\2434546\\RiderProjects\\PWS_Lab2V2\\ForumDeDiscussion\\ForumDeDiscussion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\2434546\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\2434546\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -193,7 +193,11 @@
     "C:\\Users\\2434546\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\2434546\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\2434546\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\2434546\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\2434546\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\2434546\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\2434546\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\2434546\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.33\\microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\2434546\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.33\\microsoft.netcore.app.host.win-x64.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }
