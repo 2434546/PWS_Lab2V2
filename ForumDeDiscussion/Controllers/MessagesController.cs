@@ -40,23 +40,22 @@ public class MessagesController : Controller
         return View(messages);
     }
 
-    
     [HttpPost]
-    public async Task<IActionResult> SendMessage(int subjectId, string content)
+    public async Task<IActionResult> SendMessage(int subjectId, MessageViewModel model)
     {
-        if (string.IsNullOrWhiteSpace(content))
+        if (string.IsNullOrWhiteSpace(model.Content))
         {
             TempData["Error"] = "Veuillez entrer un message.";
             return RedirectToAction(nameof(Messages), new { id = subjectId });
         }
 
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        
+
         try
         {
             var message = new Message
             {
-                Content = content,
+                Content = model.Content,
                 SubjectId = subjectId,
                 MemberId = int.Parse(userId),
                 Date = DateTime.Now
@@ -74,7 +73,8 @@ public class MessagesController : Controller
 
         return RedirectToAction(nameof(Messages), new { id = subjectId });
     }
-    
+
+
     [HttpGet]
     public async Task<IActionResult> GetMessageDetails(int id)
     {
