@@ -5,87 +5,84 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ForumDeDiscussion
 build_property.RootNamespace = ForumDeDiscussion
-build_property.ProjectDir = C:\Users\2434546\OneDrive - Cégep de Chicoutimi\Bureau\zeb\PWS_Lab2V2\ForumDeDiscussion\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\asiau\OneDrive - Cégep de Chicoutimi\Bureau\zeb\PWS_Lab2V2\ForumDeDiscussion\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\2434546\OneDrive - Cégep de Chicoutimi\Bureau\zeb\PWS_Lab2V2\ForumDeDiscussion
+build_property.MSBuildProjectDirectory = C:\Users\asiau\OneDrive - Cégep de Chicoutimi\Bureau\zeb\PWS_Lab2V2\ForumDeDiscussion
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/MembersManagement/MembersManagement.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/MembersManagement/MembersManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc01hbmFnZW1lbnRcTWVtYmVyc01hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/SectionsManagement/SectionsManagement.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/SectionsManagement/SectionsManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VjdGlvbnNNYW5hZ2VtZW50XFNlY3Rpb25zTWFuYWdlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Shared/_Layout.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/EditProfile.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/Login.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/Register.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Home/Index.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Home/Privacy.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Messages/Messages.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Messages/Messages.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcTWVzc2FnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/Error.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Subjects/Subjects.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Subjects/Subjects.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcU3ViamVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/_ViewImports.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/_ViewStart.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/2434546/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/_Layout.cshtml]
+[C:/Users/asiau/OneDrive - Cégep de Chicoutimi/Bureau/zeb/PWS_Lab2V2/ForumDeDiscussion/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s1hl2a0tug
